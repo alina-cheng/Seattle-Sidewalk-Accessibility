@@ -1,4 +1,5 @@
-# Seattle Sidewalk Accessibility - Data Analysis/Visualization Report
+# Seattle Sidewalk Accessibility 
+_Data Analysis/Visualization Report_
 
 This project explores sidewalk accessibility across Seattle using data from the Project Sidewalk initiative. Sidewalk conditions vary widely throughout the city, and barriers such as missing sidewalks or curb ramps can significantly impact mobility for wheelchair users, seniors, and pedestrians. The goal of this project is to better understand where these barriers exist, how severe they are, and which neighborhoods are most affected.
 
