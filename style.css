@@ -1,0 +1,167 @@
+header::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 57.45%;
+  background: rgba(0,0,0,0.4); /* semi-transparent black overlay */
+  z-index: 0;
+}
+
+header h1, header h2, header p {
+  position: relative;
+  z-index: 1; /* keeps text on top of overlay */
+}
+
+header {
+  background-image: url('https://images.squarespace-cdn.com/content/v1/55f8575fe4b0b275dd96426f/1464484656971-GH1BIWQP3WCTDJHVAGC5/seatlleWEB.jpg'); /* Path to your image */
+  background-size: cover;      /* Makes the image cover the entire header */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Avoids tiling */
+  color: white;                /* Text color to stand out on image */
+  padding: 5rem 2rem;          /* Adjust padding for spacing */
+  text-align: center;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #EEEEEE;
+    color: #5689a9;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 64px;
+}
+
+section {
+    padding: 2rem;
+    max-width: 1000px;
+    margin: auto;
+}
+
+h2 { /*subtitle*/
+    color: #ffffff;
+}
+
+h3 { /*body headers*/
+    color: #3c6686;
+    font-size: 48px;
+    text-align: center;
+}
+
+h4 { /*body subheaders*/
+    color: #DDAED3;
+    font-size: 32px;
+    text-align: center;
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.caption {
+    font-size: 16px;
+    color: #3c6686;
+    text-align: center;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+footer {
+    background: #DDAED3;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.map-container {
+  display: flex;
+  justify-content: center;
+}
+
+.map-container img {
+  width: 90%;
+  max-width: 1000px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.row-div {
+    display: grid;
+    grid-template: 128px 1fr / 1fr 1fr;
+    gap: 32px;
+    padding: 16px 64px;
+}
+
+.issues-header {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+}
+
+.density-header {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+}
+
+.avg-severity {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+}
+
+.no-issues-per-type-header {
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+}
+
+.no-issues-per-type {
+    grid-row: 4 / 5;
+    grid-column: 1 / 2;
+}
+
+.acc-header {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+}
+
+.acc-map {
+    grid-row: 2 / 5;
+    grid-column: 2 / 3;
+}
+
+.tableau-placeholder-div {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+}
+
+.map-container-div {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+}
+
+.full-width-image {
+  margin: 40px;
+  padding: 0;
+}
+
+.full-width-image img {
+  width: 137%;
+  height: auto;
+  display: block;
+  margin: 0;
+}
+
+.interactive-map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    color: #3c6686;
+    line-height: 2;
+    text-align: center;
+}

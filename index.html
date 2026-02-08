@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Seattle Sidewalk Accessibility</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Seattle Sidewalk Accessibility</h1>
+  <h2>A Data Analysis/Visualization and ML Model Report</h2>
+  <p>Alina C. Allison W. David O. Tri. V</p>
+</header>
+
+<section>
+  <h3>Introduction</h3>
+  <p>
+    Sidewalk accessibility in Seattle varies widely, creating challenges 
+    for wheelchair users, seniors, and pedestrians navigating the city. 
+    Missing curb ramps, sidewalks, and other obstacles can slow 
+    movement or make travel unsafe. Our project leverages the Project 
+    Sidewalk dataset to identify these mobility friction zones, quantify 
+    the severity of sidewalk issues, and compute accessibility scores 
+    for different neighborhoods. By mapping and analyzing this data, 
+    we aim to highlight patterns of infrastructure inequity and provide 
+    actionable insights for city planners to improve pedestrian 
+    accessibility and safety.
+  </p>
+</section>
+
+<section style="margin-bottom: -7rem;">
+  <h3>Key Statistics</h3>
+</section>
+
+<section class="full-width-image">
+  <img src="Stats.png" alt="Summary Statistics">
+</section>
+
+<section>
+  <h3>Plotting the Data</h3>
+  <p>
+    We started our analysis by plotting all the given data points on a map 
+    of Seattle, with each color representing a different type of issue. 
+    This allowed us to get a broad understanding of the dataset and how 
+    the issues were spread throughout Seattle.
+  </p>
+</section>
+
+<div class="row-div">
+  <!-- <section id="density-map"> -->
+  <h4 class="acc-header">Accessibility Issues by Type</h4>
+  <div class="acc-map">
+    <div class="map-container">
+      <img
+        src="IssueTypeMap.png"
+        alt="Map with each color representing a different type of sidewalk accessibility issue"
+      />
+    </div>
+    <p class="caption">
+      This map categorizes sidewalk accessibility issues by type, using different colored dots to represent
+      missing curb ramps, missing sidewalks, and other common problems.
+    </p>
+  </div>
+
+  <!-- <h4 class="no-issues-per-type-header">Number of Issues per Type</h4>
+  <div class="no-issues-per-type">
+    <div class="tableauPlaceholder" id="viz1770519024435" style="position: relative;">
+    <noscript>
+      <a href="#">
+        <img 
+          alt="Number of Issues per Type" 
+          src="https://public.tableau.com/static/images/Nu/NumberofIssuesperType/NumberofIssuesperType/1_rss.png" 
+          style="border: none;" 
+        />
+      </a>
+    </noscript>
+
+    <object class="tableauViz" style="display:none;">
+      <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+      <param name="embed_code_version" value="3" />
+      <param name="site_root" value="" />
+      <param name="name" value="NumberofIssuesperType/NumberofIssuesperType" />
+      <param name="tabs" value="no" />
+      <param name="toolbar" value="yes" />
+      <param name="static_image" value="https://public.tableau.com/static/images/Nu/NumberofIssuesperType/NumberofIssuesperType/1.png" />
+      <param name="animate_transition" value="yes" />
+      <param name="display_static_image" value="yes" />
+      <param name="display_spinner" value="yes" />
+      <param name="display_overlay" value="yes" />
+      <param name="display_count" value="yes" />
+      <param name="language" value="en-US" />
+    </object>
+  </div>
+
+  <p class="caption">
+    This chart shows the distribution of reported sidewalk accessibility issues by type, helping identify the most common barriers across neighborhoods.
+  </p>
+  </div> -->
+
+  <h4 class="avg-severity">Average Severity per Issue Type</h4>
+
+  <div class="tableau-placeholder-div">
+    <div class="tableauPlaceholder" id="viz1770514253784" style="position: relative;">
+    <noscript>
+      <a href="#">
+        <img 
+          alt="Average Severity per Issue" 
+          src="https://public.tableau.com/static/images/Av/AverageSeverityperIssue/AverageSeverityperIssue/1_rss.png" 
+          style="border: none;" 
+        />
+      </a>
+    </noscript>
+
+    <object class="tableauViz" style="display:none;">
+      <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+      <param name="embed_code_version" value="3" />
+      <param name="site_root" value="" />
+      <param name="name" value="AverageSeverityperIssue/AverageSeverityperIssue" />
+      <param name="tabs" value="no" />
+      <param name="toolbar" value="yes" />
+      <param name="static_image" value="https://public.tableau.com/static/images/Av/AverageSeverityperIssue/AverageSeverityperIssue/1.png" />
+      <param name="animate_transition" value="yes" />
+      <param name="display_static_image" value="yes" />
+      <param name="display_spinner" value="yes" />
+      <param name="display_overlay" value="yes" />
+      <param name="display_count" value="yes" />
+      <param name="language" value="en-US" />
+    </object>
+    </div>
+    <p class="caption">
+    This visualization shows the average severity of reported accessibility issues by issue type,
+    helping identify which issues have the biggest impact on mobility.
+    </p>
+  </div>
+</div>
+
+<script type="text/javascript">
+  var divElement = document.getElementById("viz1770514253784");
+  var vizElement = divElement.getElementsByTagName("object")[0];
+  vizElement.style.width = "100%";
+  vizElement.style.height = (divElement.offsetWidth * 0.75) + "px";
+
+  var scriptElement = document.createElement("script");
+  scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
+  vizElement.parentNode.insertBefore(scriptElement, vizElement);
+</script>
+
+<section>
+  <h3>Comparing Issue Counts and Density Across Neighborhoods</h3>
+  <p>
+    We compared the total number of accessibility issues per neighborhood 
+    with the density heat map of all reported problems. This allowed us to 
+    see not only which neighborhoods had the highest number of issues but 
+    also how concentrated these problems were within each area, providing 
+    a more nuanced understanding of mobility challenges across the city.
+  </p>
+</section>
+
+<div class="row-div">
+<!-- <section id="issues-per-neighborhood"> -->
+  <h4 class="issues-header">Number of Issues per Neighborhood</h4>
+
+  <div class="tableau-placeholder-div">
+  <div class="tableauPlaceholder" id="viz1770507961924" style="position: relative;">
+    <noscript>
+      <a href="#">
+        <img
+          alt="Number of Issues per Neighborhood"
+          src="https://public.tableau.com/static/images/Nu/NumberofIssuesperNeighborhood/NumberofIssuesperNeighborhood/1_rss.png"
+          style="border: none;"
+        />
+      </a>
+    </noscript>
+
+    <object class="tableauViz" style="display:none;">
+      <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+      <param name="embed_code_version" value="3" />
+      <param name="site_root" value="" />
+      <param name="name" value="NumberofIssuesperNeighborhood/NumberofIssuesperNeighborhood" />
+      <param name="tabs" value="no" />
+      <param name="toolbar" value="yes" />
+      <param name="static_image" value="https://public.tableau.com/static/images/Nu/NumberofIssuesperNeighborhood/NumberofIssuesperNeighborhood/1.png" />
+      <param name="animate_transition" value="yes" />
+      <param name="display_static_image" value="yes" />
+      <param name="display_spinner" value="yes" />
+      <param name="display_overlay" value="yes" />
+      <param name="display_count" value="yes" />
+      <param name="language" value="en-US" />
+    </object>
+  </div>
+
+  <p class="caption">
+    This visualization shows the total number of reported accessibility issues across neighborhoods,
+    highlighting areas with the highest concentration of concerns.
+  </p>
+</div>
+
+<!-- </section> -->
+
+<!-- <section id="density-map"> -->
+  <h4 class="density-header">Density of Issues</h4>
+  <div class="map-container-div">
+  <div class="map-container">
+    <img
+      src="DensityMap.png"
+      alt="Density map showing concentration of sidewalk accessibility issues"
+    />
+  </div>
+
+  <p class="caption">
+    This density heat map visualizes clusters of reported sidewalk accessibility issues,
+    with darker regions indicating higher concentrations of problems.
+  </p>
+  </div>
+<!-- </section> -->
+</div>
+
+<script type="text/javascript">
+  var divElement = document.getElementById("viz1770507961924");
+  var vizElement = divElement.getElementsByTagName("object")[0];
+  vizElement.style.width = "100%";
+  vizElement.style.height = (divElement.offsetWidth * 0.75) + "px";
+
+  var scriptElement = document.createElement("script");
+  scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
+  vizElement.parentNode.insertBefore(scriptElement, vizElement);
+</script>
+
+<section style="margin-bottom: -4rem;">
+  <h3>Severity Score</h3>
+  <p>
+    To understand and compare sidewalk accessibility across Seattle 
+    neighborhoods, we created a severity score: a single, composite 
+    metric that captures both the number of reported issues and their 
+    impact on mobility and safety. Using a simple average severity alone 
+    doesn’t account for how concentrated the problems are or how many are 
+    high-risk. The severity score solves this by combining three key factors 
+    into a 0–100 scale:
+  </p>
+  <p>
+  <ul style="text-align: left; margin-left: 2rem; line-height: 1.5; font-size: 20px;">
+    <li><strong>Average Severity (40%)</strong>: the mean of all issue ratings (1–4 scale), scaled to 0–40 points.</li>
+    <li><strong>Issue Density (30%)</strong>: the number of issues in the neighborhood relative to the maximum, scaled to 0–30 points.</li>
+    <li><strong>High-Severity Percentage (30%)</strong>: the proportion of issues rated 3 or 4, scaled to 0–30 points.</li>
+  </ul>
+  </p>
+  <p>
+    This formula allows neighborhoods to be ranked consistently, highlighting areas with the most significant accessibility challenges and helping prioritize interventions.
+  </p>
+</section>
+
+<section id="severity-score-per-neighborhood">
+  <h4>Severity Score per Neighborhood</h4>
+
+  <div class="tableauPlaceholder" id="viz1770516932810" style="position: relative;">
+    <noscript>
+      <a href="#">
+        <img 
+          alt="Severity Score per Neighborhood" 
+          src="https://public.tableau.com/static/images/Se/SeverityScoreperNeighborhood/SeverityScoreperNeighborhood/1_rss.png" 
+          style="border: none;" 
+        />
+      </a>
+    </noscript>
+
+    <object class="tableauViz" style="display:none;">
+      <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+      <param name="embed_code_version" value="3" />
+      <param name="site_root" value="" />
+      <param name="name" value="SeverityScoreperNeighborhood/SeverityScoreperNeighborhood" />
+      <param name="tabs" value="no" />
+      <param name="toolbar" value="yes" />
+      <param name="static_image" value="https://public.tableau.com/static/images/Se/SeverityScoreperNeighborhood/SeverityScoreperNeighborhood/1.png" />
+      <param name="animate_transition" value="yes" />
+      <param name="display_static_image" value="yes" />
+      <param name="display_spinner" value="yes" />
+      <param name="display_overlay" value="yes" />
+      <param name="display_count" value="yes" />
+      <param name="language" value="en-US" />
+    </object>
+  </div>
+
+  <p class="caption">
+    This visualization shows the calculated severity scores for each neighborhood, combining the number, density, and severity of sidewalk accessibility issues to highlight priority areas.
+  </p>
+</section>
+
+<script type="text/javascript">
+  var divElement = document.getElementById("viz1770516932810");
+  var vizElement = divElement.getElementsByTagName("object")[0];
+  vizElement.style.width = "100%";
+  vizElement.style.height = (divElement.offsetWidth * 0.75) + "px";
+
+  var scriptElement = document.createElement("script");
+  scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
+  vizElement.parentNode.insertBefore(scriptElement, vizElement);
+</script>
+
+<section>
+  <h3>Putting It All Together</h3>
+  <p>
+    This interactive map colors the neighborhoods based off of their Severity 
+    Score, telling us that the Industrial District has the overall worst 
+    sidewalk conditions. The map also includes lots of other information, 
+    including total issues, average severity, high severity count (# of 
+    issues with severity >= 3), high severity percentage, most common issue, 
+    and most common issue count.
+  </p>
+</section>
+
+<div class="interactive-map">
+  <iframe src="interactive_severity_map.html" width="70%" height="800" ></iframe>
+</div>
+<section id="top-bottom-5-neighborhoods">
+  <h4>Top and Bottom 5 Neighborhoods by Severity Score</h4>
+
+  <div class="tableauPlaceholder" id="viz1770517029018" style="position: relative;">
+    <noscript>
+      <a href="#">
+        <img 
+          alt="Top and Bottom 5 Neighborhoods" 
+          src="https://public.tableau.com/static/images/To/TopandBottom5Neighborhoods/TopandBottom5Neighborhoods/1_rss.png" 
+          style="border: none;" 
+        />
+      </a>
+    </noscript>
+
+    <object class="tableauViz" style="display:none;">
+      <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+      <param name="embed_code_version" value="3" />
+      <param name="site_root" value="" />
+      <param name="name" value="TopandBottom5Neighborhoods/TopandBottom5Neighborhoods" />
+      <param name="tabs" value="no" />
+      <param name="toolbar" value="yes" />
+      <param name="static_image" value="https://public.tableau.com/static/images/To/TopandBottom5Neighborhoods/TopandBottom5Neighborhoods/1.png" />
+      <param name="animate_transition" value="yes" />
+      <param name="display_static_image" value="yes" />
+      <param name="display_spinner" value="yes" />
+      <param name="display_overlay" value="yes" />
+      <param name="display_count" value="yes" />
+      <param name="language" value="en-US" />
+    </object>
+  </div>
+
+  <p class="caption">
+    This visualization highlights the five neighborhoods with the highest (least accessible area) and lowest (most accessible area) severity scores, helping identify areas in greatest need of sidewalk accessibility improvements.
+  </p>
+</section>
+
+<script type="text/javascript">
+  var divElement = document.getElementById("viz1770517029018");
+  var vizElement = divElement.getElementsByTagName("object")[0];
+  vizElement.style.width = "100%";
+  vizElement.style.height = (divElement.offsetWidth * 0.75) + "px";
+
+  var scriptElement = document.createElement("script");
+  scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
+  vizElement.parentNode.insertBefore(scriptElement, vizElement);
+</script>
+
+<section>
+  <h3>Discussion</h3>
+  <h4>Summary of Findings</h4>
+  <p>
+    Our results show that there is substantial variation in sidewalk quality 
+    across Seattle. While density maps highlight a large concentration of 
+    reports near Beacon Hill, the Severity Score reveals the Industrial 
+    District as the most critically underserved neighborhood. This area not 
+    only contains the highest total number of reported issues of over 11,000, 
+    but also has the highest Severity Score, indicating that its 
+    infrastructure conditions are consistently more severe than in other 
+    parts of the city. In addition, our breakdown by issue type shows that 
+    although curb ramps are the most frequently reported category, 
+    “No Sidewalk” represents the most severe barrier overall, with the 
+    highest average severity.
+
+  </p>
+  <h4>Strategic Recommendations</h4>
+  <p>
+    <ol style="text-align: left; margin-left: 1rem; line-height: 1.5; font-size: 20px;">
+    <li>First, resources should be immediately directed to the 
+    Industrial District. Its Severity Score of 85.1 significantly exceeds 
+    the second least accessible area, Ravenna, which has a Severity Score 
+    of 71. Therefore, the Industrial District requires the most attention 
+    regarding infrastructure improvement. </li>
+    <br>
+    <li>Additionally, the city should prioritize projects relating to the 
+    installation of sidewalks and curb ramps. Because the issues 
+    "No Sidewalk" and "No Curb Ramp" have the highest average severity 
+    ratings, therefore improvements in these areas will likely produce 
+    the greatest impact on safety and accessibility.</li>
+    <br>
+    <li>Finally, we believe that future funding should be allocated based on 
+    our calculated Severity Score rather than just complaint volume. 
+    While areas like the Central Business District are highly populated, 
+    they have some of the lowest Severity Scores. This ensures that 
+    neighborhoods with fewer voices but worse conditions,
+    like the Industrial District, are not overlooked.</li>
+  </ol>
+  </p>
+</section>
+
+<section>
+  <h3>Sources</h3>
+    <a href="https://public.tableau.com/views/Datathon2026SidewalkAccessibility/NumberofIssuesperType?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link">Tableau Graphs</a>
+    <br>
+    <a href="https://colab.research.google.com/drive/1mw8iXn7dYlOJjo7HUFqMulYcjsl3Z75r?usp=sharing">Google Colab</a>
+    <br>
+    <a href="https://github.com/alvanmain2006/DataThon-2026-Everyday-life-track/edit/main/README.md">Machine Learning GitHub</a>
+</section>
+
+<footer>
+  <p>Team Data Divas · Datathon 2026</p>
+</footer>
+
+</body>
+</html>
